@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import Experiment from '../components/exp';
 
 export default class App extends Component {
   render() {
     return (
-      <div>React simple starter</div>
+      <div>
+        <Experiment />
+      </div>
     );
   }
 }
