@@ -12,16 +12,12 @@ jsPsych.plugins["html-keyboard-response"] = html_keyboard_response;
 
 //<Experiment callback={(target)=> console.log(target)}  />
 export default class Experiment extends Component {
-  constructor(props) {
-    super(props);
-  }
 
-  handleFinish(){
-    <h2>Thanks!</h2>
-  }
+  width = this.props.width || '100%';
+  height = this.props.height || '100%';
 
   render() {
-    return (<div id="experiment" />)
+    return (<div width={this.width} height={this.height} id="experiment" />)
   }
 
   componentDidMount() {
@@ -29,9 +25,7 @@ export default class Experiment extends Component {
     jsPsych.init({
       display_element: "experiment",
       timeline: timeline,
-      default_iti: 3000,
-      on_finish: this.handleFinish
+      default_iti: 3000
     });
   }
-
 }
