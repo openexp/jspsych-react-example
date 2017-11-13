@@ -8,7 +8,7 @@
  * documentation: docs.jspsych.org
  *
  **/
-const jsPsych = window.jsPsych || require('jspsych');
+import jsPsych from 'jspsych';
 
 var plugin = (function() {
 
