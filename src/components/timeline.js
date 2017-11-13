@@ -15,7 +15,7 @@ const trial_duration = 300;
 const stim_duration = 200;
 const iti = 300;
 const jitter = 200;
-const n_trials = 10;
+const n_trials = 2010;
 const prob = .15;
 const plugin_name = 'custom_image_display';
 
