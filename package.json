@@ -1,9 +1,9 @@
 {
-  "name": "p300-react",
-  "version": "1.0.0",
+  "name": "p300-react-app",
+  "version": "1.0.1",
   "description": "Simple React-based P300 experiment package",
   "main": "index.js",
-  "repository": "git@github.com:teonbrooks/p300-react.git",
+  "repository": "git@github.com:teonbrooks/p300-react-app.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
@@ -27,7 +27,8 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "jspsych": "git://github.com/teonbrooks/jspsych.git#npm",
+    "jspsych": "https://github.com/teonbrooks/jspsych.git#npm",
+    "jspsych-react": "https://github.com/teonbrooks/jspsych-react.git#v0.0.3",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",

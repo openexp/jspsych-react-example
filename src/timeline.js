@@ -34,7 +34,7 @@ export function timelineFactory(callback) {
 
 
   // Stimuli
-  var base_path = '../../assets/images/';
+  var base_path = '../src/images/';
   var targets = ['target-76116_640.jpg', 'target-360807_640.jpg', 'target-468232_640.jpg', 'target-2083492_640.jpg'];
   var nontargets = ['nontarget-234836_640.jpg', 'nontarget-274183_640.jpg', 'nontarget-280332_640.jpg', 'nontarget-734689_640.jpg'];
 
