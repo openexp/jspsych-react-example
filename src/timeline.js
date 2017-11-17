@@ -34,7 +34,7 @@ export function timelineFactory(callback) {
 
 
   // Stimuli
-  var base_path = '../src/images/';
+  var base_path = 'src/images/';
   var targets = ['target-76116_640.jpg', 'target-360807_640.jpg', 'target-468232_640.jpg', 'target-2083492_640.jpg'];
   var nontargets = ['nontarget-234836_640.jpg', 'nontarget-274183_640.jpg', 'nontarget-280332_640.jpg', 'nontarget-734689_640.jpg'];
 
@@ -87,9 +87,9 @@ export function timelineFactory(callback) {
         "press the letter F on the keyboard as fast as you can.</p>" +
         "<p>If the circle is <strong>cat</strong>, press the letter J " +
         "as fast as you can.</p>" +
-        "<div style='float: left;'><img src='assets/images/nontarget-234836_640.jpg'></img>" +
+        "<div style='float: left;'><img src='src/images/nontarget-234836_640.jpg'></img>" +
         "<p class='small'><strong>Press the F key</strong></p></div>" +
-        "<div class='float: right;'><img src='assets/images/target-76116_640.jpg'></img>" +
+        "<div class='float: right;'><img src='src/images/target-76116_640.jpg'></img>" +
         "<p class='small'><strong>Press the J key</strong></p></div>" +
         "<p>Press any key to begin.</p>",
     post_trial_gap: 2000
