@@ -8,7 +8,7 @@
  * documentation: docs.jspsych.org
  *
  **/
-import jsPsych from 'jspsych';
+import { jsPsych } from 'jspsych-react';
 
 var plugin = (function() {
 

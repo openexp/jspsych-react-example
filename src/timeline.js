@@ -76,7 +76,8 @@ export function timelineFactory(callback) {
   /* define welcome message trial */
   var welcome_block = {
     type: "html-keyboard-response",
-    stimulus: "Welcome to the experiment. Press any key to begin."
+    stimulus: "Welcome to the experiment. Press any key to begin.",
+    post_trial_gap: 500
   };
   timeline.push(welcome_block);
   /* define instructions trial */

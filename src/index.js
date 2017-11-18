@@ -4,9 +4,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 
-import Experiment from 'jspsych-react';
+import { Experiment } from 'jspsych-react';
 import { timelineFactory } from './timeline';
-// import custom_image_display from './custom_image_display';
+import callback_image_display from './callback_image_display';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -15,13 +15,13 @@ const callback = (targetID) => console.log(targetID);
 const timeline = timelineFactory(callback);
 
 // Import plugins
-// const plugins = {
-// "custom_image_display": custom_image_display,
-// }
+const plugins = {
+"callback_image_display": callback_image_display,
+}
 
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <Experiment timeline={timeline} width="30%"/>
+    <Experiment timeline={timeline} plugins={plugins} width="100%"/>
   </Provider>
   , document.querySelector('.container'));
