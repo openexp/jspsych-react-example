@@ -17,7 +17,7 @@ const iti = 300;
 const jitter = 200;
 const n_trials = 2010;
 const prob = .15;
-const plugin_name = 'custom_image_display';
+const plugin_name = 'callback_image_display';
 
 
 // const callback =  (targetID) => {
