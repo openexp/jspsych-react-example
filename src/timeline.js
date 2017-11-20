@@ -80,23 +80,6 @@ export function timelineFactory(callback) {
     post_trial_gap: 500
   };
   timeline.push(welcome_block);
-  /* define instructions trial */
-  var instructions = {
-    type: "html-keyboard-response",
-    stimulus: "<p>In this experiment, a pet will appear in the center " +
-        "of the screen.</p><p>If the pet is <strong>dog</strong>, " +
-        "press the letter F on the keyboard as fast as you can.</p>" +
-        "<p>If the circle is <strong>cat</strong>, press the letter J " +
-        "as fast as you can.</p>" +
-        "<div style='float: left;'><img src='src/images/nontarget-234836_640.jpg'></img>" +
-        "<p class='small'><strong>Press the F key</strong></p></div>" +
-        "<div class='float: right;'><img src='src/images/target-76116_640.jpg'></img>" +
-        "<p class='small'><strong>Press the J key</strong></p></div>" +
-        "<p>Press any key to begin.</p>",
-    post_trial_gap: 2000
-  };
-  timeline.push(instructions);
-
 
   var test_trials = {
     stimulus: 'stimulus',
