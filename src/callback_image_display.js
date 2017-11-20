@@ -116,7 +116,7 @@ var plugin = (function() {
       display_element.querySelector('#jspsych-image-keyboard-response-stimulus').className += ' responded';
 
       // only record the first response
-      if (response.key == -1) {
+      if (response.key === -1) {
         response = info;
       }
 
@@ -126,7 +126,7 @@ var plugin = (function() {
     };
 
     // start the response listener
-    if (trial.choices != jsPsych.NO_KEYS) {
+    if (trial.choices !== jsPsych.NO_KEYS) {
       var keyboardListener = jsPsych.pluginAPI.getKeyboardResponse({
         callback_function: after_response,
         valid_responses: trial.choices,
