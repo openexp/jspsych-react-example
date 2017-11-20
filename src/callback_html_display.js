@@ -1,30 +1,28 @@
 /**
- * callback_image_display
+ * callback_html_display
  * Teon L Brooks
- * modified from Josh de Leeuw 
+ * modified from Josh de Leeuw
  *
  * plugin for displaying a stimulus and getting a keyboard response
  *
  * documentation: docs.jspsych.org
  *
  **/
-import { jsPsych } from 'jspsych-react';
+ import { jsPsych } from 'jspsych-react';
 
-var plugin = (function() {
+ var plugin = (function() {
 
   var plugin = {};
 
-  jsPsych.pluginAPI.registerPreload('image-keyboard-response', 'stimulus', 'image');
-
   plugin.info = {
-    name: 'image-keyboard-response',
+    name: 'html-keyboard-response',
     description: '',
     parameters: {
       stimulus: {
-        type: jsPsych.plugins.parameterType.IMAGE,
+        type: jsPsych.plugins.parameterType.HTML_STRING,
         pretty_name: 'stimulus',
         default: undefined,
-        description: 'The image to be displayed'
+        description: 'The HTML string to be displayed'
       },
       choices: {
         type: jsPsych.plugins.parameterType.KEYCODE,
@@ -57,15 +55,13 @@ var plugin = (function() {
         default: true,
         description: 'If true, trial will end when subject makes a response.'
       },
+
     }
   }
 
   plugin.trial = function(display_element, trial) {
 
-    var new_html = '<img src="'+trial.stimulus+'" id="jspsych-image-keyboard-response-stimulus"></img>';
-
-    // add prompt
-    new_html += trial.prompt;
+    var new_html = '<div id="jspsych-html-keyboard-response-stimulus">'+trial.stimulus+'</div>';
 
     // add option for on_start parameter in the experiment
     if (typeof trial.on_start === 'function'){
@@ -73,6 +69,9 @@ var plugin = (function() {
     } else if (typeof trial.on_start !== 'undefined') {
       trial.data['on_start'] = trial.on_start;
     };
+
+    // add prompt
+    new_html += trial.prompt;
 
     // draw
     display_element.innerHTML = new_html;
@@ -113,7 +112,7 @@ var plugin = (function() {
 
       // after a valid response, the stimulus will have the CSS class 'responded'
       // which can be used to provide visual feedback that a response was recorded
-      display_element.querySelector('#jspsych-image-keyboard-response-stimulus').className += ' responded';
+      display_element.querySelector('#jspsych-html-keyboard-response-stimulus').className += ' responded';
 
       // only record the first response
       if (response.key == -1) {
@@ -139,7 +138,7 @@ var plugin = (function() {
     // hide stimulus if stimulus_duration is set
     if (trial.stimulus_duration > 0) {
       jsPsych.pluginAPI.setTimeout(function() {
-        display_element.querySelector('#jspsych-image-keyboard-response-stimulus').style.visibility = 'hidden';
+        display_element.querySelector('#jspsych-html-keyboard-response-stimulus').style.visibility = 'hidden';
       }, trial.stimulus_duration);
     }
 
@@ -152,7 +151,7 @@ var plugin = (function() {
 
   };
 
-  return plugin;
+return plugin;
 })();  // IIFE closure
 
 export default plugin;

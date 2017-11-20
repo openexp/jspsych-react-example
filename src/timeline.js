@@ -25,11 +25,17 @@ const plugin_name = 'callback_image_display';
 // }
 export function timelineFactory(callback) {
   // Stimuli tagging
+  const start_callback = function (){
+    callback('start')
+  }
   const target_callback = function (){
     callback('target')
   }
   const nontarget_callback = function (){
     callback('nontarget')
+  }
+  const stop_callback = function (){
+    callback('stop')
   }
 
 
@@ -75,9 +81,10 @@ export function timelineFactory(callback) {
   var timeline = [];
   /* define welcome message trial */
   var welcome_block = {
-    type: "html-keyboard-response",
+    type: "callback_html_display",
     stimulus: "Welcome to the experiment. Press any key to begin.",
-    post_trial_gap: 500
+    post_trial_gap: 500,
+    on_start: start_callback
   };
   timeline.push(welcome_block);
 
@@ -90,8 +97,15 @@ export function timelineFactory(callback) {
     stimulus_duration: stim_duration,
     post_trial_gap: post_trial_gap(),
   };
-
   timeline.push(test_trials);
+
+  var end_block = {
+    type: "callback_html_display",
+    stimulus: "Thanks for participating!",
+    post_trial_gap: 500,
+    on_start: stop_callback
+  };
+
 
   return timeline;
 
