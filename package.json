@@ -1,15 +1,18 @@
 {
-  "name": "p300-react-app",
+  "name": "jspsych-react-example",
   "version": "1.0.3",
-  "description": "Simple React-based P300 experiment package",
+  "description": "Simple jspsych-react P300 experiment",
   "main": "index.js",
-  "repository": "git@github.com:teonbrooks/p300-react-app.git",
+  "repository": "git@github.com:openexp/jspsych-react-example.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "contributors": ["Teon Brooks", "Marion Le Borgne"],
+  "contributors": [
+    "Teon Brooks",
+    "Marion Le Borgne"
+  ],
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",

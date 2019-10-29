@@ -6,8 +6,8 @@ import reducers from './reducers';
 
 import { Experiment } from 'jspsych-react';
 import { timelineFactory } from './timeline';
-import callback_image_display from './callback_image_display';
-import callback_html_display from './callback_html_display';
+import callbackImageKeyboardResponsePlugin from './callbackImageKeyboardResponsePlugin';
+
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
@@ -17,8 +17,7 @@ const timeline = timelineFactory(callback);
 
 // Import plugins
 const plugins = {
-"callback_image_display": callback_image_display,
-"callback_html_display": callback_html_display
+  callbackImageKeyboardResponsePlugin
 }
 
 

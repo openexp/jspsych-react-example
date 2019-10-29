@@ -17,7 +17,7 @@ const iti = 300;
 const jitter = 200;
 const n_trials = 2010;
 const prob = .15;
-const plugin_name = 'callback_image_display';
+const plugin_name = 'callbackImageKeyboardResponsePlugin';
 
 
 /**
@@ -44,7 +44,7 @@ export function timelineFactory(callback) {
     callback('stop')
   };
 
-  const base_path = './images/';
+  const base_path = '../src/images/';
   let targets = [
     'target-76116_640.jpg',
     'target-360807_640.jpg',
@@ -58,8 +58,8 @@ export function timelineFactory(callback) {
     'nontarget-734689_640.jpg'
   ];
 
-  targets = targets.map(target => require(`${base_path}${target}`));
-  nontargets = nontargets.map(nontarget => require(`${base_path}${nontarget}`));
+  targets = targets.map(target => `${base_path}${target}`);
+  nontargets = nontargets.map(nontarget => `${base_path}${nontarget}`);
 
   const stimuli_order = [];
 
@@ -95,7 +95,7 @@ export function timelineFactory(callback) {
   const timeline = [];
 
   const welcome_block = {
-    type: "callback_html_display",
+    type: 'html-keyboard-response',
     stimulus: "Welcome to the experiment. Press any key to begin.",
     post_trial_gap: 500,
     on_start: start_callback
@@ -114,7 +114,7 @@ export function timelineFactory(callback) {
   timeline.push(test_trials);
 
   const end_block = {
-    type: "callback_html_display",
+    type: 'html-keyboard-response',
     stimulus: "Thanks for participating!",
     post_trial_gap: 500,
     on_start: stop_callback
