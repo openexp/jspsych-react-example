@@ -44,7 +44,8 @@ export function timelineFactory(callback) {
     callback('stop')
   };
 
-  const base_path = '../src/images/';
+  // jspsych is in the node_modules
+  const base_path = '/src/images/';
   let targets = [
     'target-76116_640.jpg',
     'target-360807_640.jpg',
@@ -95,7 +96,7 @@ export function timelineFactory(callback) {
   const timeline = [];
 
   const welcome_block = {
-    type: 'html-keyboard-response',
+    type: 'callback-html-keyboard-response',
     stimulus: "Welcome to the experiment. Press any key to begin.",
     post_trial_gap: 500,
     on_start: start_callback
@@ -114,7 +115,7 @@ export function timelineFactory(callback) {
   timeline.push(test_trials);
 
   const end_block = {
-    type: 'html-keyboard-response',
+    type: 'callback-html-keyboard-response',
     stimulus: "Thanks for participating!",
     post_trial_gap: 500,
     on_start: stop_callback

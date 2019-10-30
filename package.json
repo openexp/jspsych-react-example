@@ -1,6 +1,6 @@
 {
   "name": "jspsych-react-example",
-  "version": "1.0.3",
+  "version": "0.1.0",
   "description": "Simple jspsych-react P300 experiment",
   "main": "index.js",
   "repository": "git@github.com:openexp/jspsych-react-example.git",
@@ -10,7 +10,8 @@
     "test:watch": "npm run test -- --watch"
   },
   "contributors": [
-    "Teon Brooks",
+    "Teon L Brooks",
+    "Dano Morrison",
     "Marion Le Borgne"
   ],
   "license": "ISC",
@@ -30,7 +31,7 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
-    "jspsych-react": "https://github.com/teonbrooks/jspsych-react.git#v0.0.7",
+    "jspsych-react": "https://github.com/openexp/jspsych-react.git#v0.4.0",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
